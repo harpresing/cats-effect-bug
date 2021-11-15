@@ -1,4 +1,4 @@
-## This Repo demonstrates a Bug in http4s
+## This Repo demonstrates a Bug in http4s/cats-effect
 
 When the default `ContextShift` and `Timer` from `cats.effect.IOApp` is passed to `BlazeServerBuilder`,
 if there's a `java.lang.Error` raised during the processing of one of the HTTP Requests, 
