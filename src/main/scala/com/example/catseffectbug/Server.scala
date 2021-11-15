@@ -14,9 +14,10 @@ object Server extends IOApp {
 
   private val log = getLogger
 
-  import cats.effect.{ContextShift, Timer}
-  override implicit val contextShift: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
-  override implicit val timer: Timer[IO] = IO.timer(ExecutionContext.global)
+// If we un-comment these lines then the app times out the request with a JVM error but doesn't shut down
+//  import cats.effect.{ContextShift, Timer}
+//  override implicit val contextShift: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
+//  override implicit val timer: Timer[IO] = IO.timer(ExecutionContext.global)
 
   def run(args: List[String]): IO[ExitCode] = {
         for {
